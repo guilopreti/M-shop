@@ -16,11 +16,12 @@ const Input = ({
   placeholderMask,
   ...rest
 }) => {
+  console.log(errored);
   return (
     <Container isErrored={!!errored} className="container">
       <div className="label-div">
         <label>{label}</label>
-        {children}
+        {errored && errored.message}
       </div>
       <InputContainer isErrored={!!errored} width={width} height={height}>
         {inputOrNot ? (
