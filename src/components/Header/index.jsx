@@ -1,38 +1,38 @@
-import { useRef, useState, useEffect, useContext } from "react";
+import { useRef, useState, useEffect, useContext } from "react"
 import {
   HeaderUpperContainer,
   DesktopNavBar,
   MenuOuterContainer,
-} from "./styles";
-import DropdownMenu from "../DropdownMenu";
-import header_logo from "../../assets/header_logo.png";
-import Button from "../Button";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
-import { FaHome } from "react-icons/fa";
-import DefaultProfilePicture from "../DefaultProfilePicture";
-import { AuthContext } from "../../providers/auth";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+} from "./styles"
+import DropdownMenu from "../DropdownMenu"
+import header_logo from "../../assets/header_logo.png"
+import Button from "../Button"
+import { GiHamburgerMenu } from "react-icons/gi"
+import { AiOutlineClose } from "react-icons/ai"
+import { FaHome } from "react-icons/fa"
+import DefaultProfilePicture from "../DefaultProfilePicture"
+import { AuthContext } from "../../providers/auth"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 const Header = ({ isLoggedIn = false, username }) => {
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const [ddownMenu, setDdownMenu] = useState(false);
-  const ddownRef = useRef();
-  const history = useHistory();
+  const [isMenuClicked, setIsMenuClicked] = useState(false)
+  const [ddownMenu, setDdownMenu] = useState(false)
+  const ddownRef = useRef()
+  const history = useHistory()
 
-  const { handleLogout } = useContext(AuthContext);
+  const { handleLogout } = useContext(AuthContext)
 
   useEffect(() => {
     const closeDropdown = (e) => {
       if (ddownRef.current) {
         if (!ddownRef.current.contains(e.target)) {
-          setDdownMenu(false);
+          setDdownMenu(false)
         }
       }
-    };
+    }
 
-    document.body.addEventListener("click", closeDropdown);
-  }, []);
+    document.body.addEventListener("click", closeDropdown)
+  }, [])
 
   return (
     <>
@@ -160,7 +160,7 @@ const Header = ({ isLoggedIn = false, username }) => {
         </MenuOuterContainer>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

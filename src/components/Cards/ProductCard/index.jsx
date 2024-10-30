@@ -1,5 +1,5 @@
-import CardContainer from "./styled";
-import DefaultProfilePicture from "../../DefaultProfilePicture";
+import CardContainer from "./styled"
+import DefaultProfilePicture from "../../DefaultProfilePicture"
 
 const ProductCard = ({
   id,
@@ -38,10 +38,16 @@ const ProductCard = ({
         <div>
           <span>{year}</span>
         </div>
-        <h6>R$ {price}</h6>
+        <h6>
+          R${" "}
+          {Number(price).toLocaleString("pt-BR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}
+        </h6>
       </div>
     </CardContainer>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard

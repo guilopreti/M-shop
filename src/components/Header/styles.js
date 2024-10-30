@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const HeaderUpperContainer = styled.div`
   display: flex;
@@ -6,6 +6,7 @@ export const HeaderUpperContainer = styled.div`
   align-items: center;
   height: 80px;
   background: var(--grey-10);
+  padding: 10px 0px;
 
   .logo {
     width: 153px;
@@ -26,9 +27,14 @@ export const HeaderUpperContainer = styled.div`
       border: none;
       background: none;
       margin-right: 16px;
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
-`;
+`
 
 export const DesktopNavBar = styled.div`
   @media (max-width: 768px) {
@@ -119,7 +125,7 @@ export const DesktopNavBar = styled.div`
       font-size: 16px;
     }
   }
-`;
+`
 
 export const MenuOuterContainer = styled.div`
   @media (min-width: 769px) {
@@ -202,4 +208,4 @@ export const MenuOuterContainer = styled.div`
       background: var(--grey-6);
     }
   }
-`;
+`
